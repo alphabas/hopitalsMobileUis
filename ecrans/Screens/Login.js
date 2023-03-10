@@ -5,7 +5,7 @@ import { button1 } from '../common/button';
 import { formgroup, head1, head2, input, label, link, link2 } from '../common/formcsss';
 // import programing from '../../assets/images/patterner.jpg';
 
-const Login = () => {
+const Login = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image source={programing} style={styles.patternerBg} />
@@ -19,18 +19,22 @@ const Login = () => {
                     <Text style={head2}>Sign in to continue </Text>
                     <View style={formgroup}>
                         <Text style={label}>Email</Text>
-                        <TextInput style={input} />
+                        <TextInput style={input} placeholder="Enter your email" />
                     </View>
                     <View style={formgroup}>
                         <Text style={label}>Password</Text>
-                        <TextInput style={input} />
+                        <TextInput style={input} placeholder="Enter your password" />
                     </View>
                     <View style={styles.fp}>
                         <Text style={link}>Forgot Password ?</Text>
                     </View>
                     <Text style={button1}>Login</Text>
                     <Text style={link2}>
-                        Don't an account ? <Text style={link}> Create a new account ? </Text>{' '}
+                        Don't an account ?{' '}
+                        <Text style={link} onPress={() => navigation.navigate('signup')}>
+                            {' '}
+                            Create a new account ?{' '}
+                        </Text>{' '}
                     </Text>
                 </View>
             </View>
@@ -87,5 +91,9 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         marginHorizontal: 10,
         marginVertical: 5
+    },
+    logo: {
+        height: 80,
+        resizeMode: 'contain'
     }
 });

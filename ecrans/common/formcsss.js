@@ -13,7 +13,7 @@ module.exports = {
     },
 
     label: {
-        fontSize: 17,
+        fontSize: 14,
         color: '#000',
         marginBottom: 3,
         marginLeft: 10
@@ -24,7 +24,14 @@ module.exports = {
         width: '100%',
         marginVertical: 10
     },
+
     input: {
+        backgroundColor: '#FFB0CC',
+        borderRadius: 10,
+        padding: 5
+    },
+
+    input1: {
         backgroundColor: '#FFB0CC',
         borderRadius: 10,
         padding: 5

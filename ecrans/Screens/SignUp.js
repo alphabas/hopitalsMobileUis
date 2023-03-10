@@ -1,23 +1,24 @@
-import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
 import React from 'react';
 import programing from '../../assets/images/background.jpg';
 import { button1 } from '../common/button';
-import { formgroup, head1, head2, input, label, link, link2 } from '../common/formcsss';
+import { formgroup, formgroup1, head1, head2, input, input1, label, link, link2 } from '../common/formcsss';
 // import programing from '../../assets/images/patterner.jpg';
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image source={programing} style={styles.patternerBg} />
             <View style={styles.container1}>
-                <View style={styles.s1}>
-                    {/* <Text style={styles.h1}>Used2, Inc</Text> */}
-                    {/* <Text style={styles.small1}>Buying and sell online </Text> */}
-                </View>
-                <View style={styles.s2}>
+                <View style={styles.s1}></View>
+                <ScrollView style={styles.s2}>
                     <Text style={head1}>Create a New Account</Text>
                     <Text style={link2}>
-                        Already Registered ? <Text style={link}> Login here </Text>
+                        Already Registered ?{' '}
+                        <Text style={link} onPress={() => navigation.navigate('login')}>
+                            {' '}
+                            Login here{' '}
+                        </Text>
                     </Text>
                     <View style={formgroup}>
                         <Text style={label}>Name</Text>
@@ -26,7 +27,7 @@ const SignUp = () => {
 
                     <View style={formgroup}>
                         <Text style={label}>Email</Text>
-                        <TextInput style={input} placeholder="Enter your emai" />
+                        <TextInput style={input} placeholder="Enter your email" />
                     </View>
 
                     <View style={formgroup}>
@@ -43,8 +44,13 @@ const SignUp = () => {
                         <TextInput style={input} placeholder="Confirm your password" />
                     </View>
 
+                    <View style={formgroup}>
+                        <Text style={label}>Adresse</Text>
+                        <TextInput style={input1} placeholder="Your adress" />
+                    </View>
+
                     <Text style={button1}>Signup</Text>
-                </View>
+                </ScrollView>
             </View>
         </View>
     );
@@ -75,13 +81,13 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '10%'
+        height: '5%'
     },
     s2: {
         display: 'flex',
         backgroundColor: '#fff',
         width: '100%',
-        height: '90%',
+        height: '95%',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         padding: 10

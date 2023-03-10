@@ -2,17 +2,20 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import programing from '../../assets/images/background.jpg';
 import { button1 } from '../common/button';
-// import programing from '../../assets/images/patterner.jpg';
 
-const Welcome = () => {
+const Welcome = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image source={programing} style={styles.patternerBg} />
-            {/* <Text style={styles.head}>HEL..</Text> */}
             <View style={styles.container1}>
+                {/* <Image source={} style={styles.logo} /> */}
                 <Text style={styles.head}>Welcome to hospit plus</Text>
-                <Text style={button1}>Login</Text>
-                <Text style={button1}>SignUp</Text>
+                <Text style={button1} onPress={() => navigation.navigate('login')}>
+                    Login
+                </Text>
+                <Text style={button1} onPress={() => navigation.navigate('signup')}>
+                    SignUp
+                </Text>
             </View>
         </View>
     );
@@ -40,5 +43,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%'
+    },
+    logo: {
+        height: '20%',
+        resizeMode: 'contain',
+        marginBottom: 50
     }
 });
