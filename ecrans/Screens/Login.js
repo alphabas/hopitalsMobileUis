@@ -11,7 +11,9 @@ const Login = ({ navigation }) => {
             <Image source={programing} style={styles.patternerBg} />
             <View style={styles.container1}>
                 <View style={styles.s1}>
-                    <Text style={styles.h1}>Used2, Inc</Text>
+                    <Text style={styles.h1} onPress={() => navigation.navigate('welcome')}>
+                        Used2, Inc
+                    </Text>
                     <Text style={styles.small1}>Buying and sell online </Text>
                 </View>
                 <View style={styles.s2}>
